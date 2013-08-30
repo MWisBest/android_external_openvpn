@@ -77,6 +77,10 @@ common_SRC_FILES:= \
 
 common_CFLAGS += -DANDROID_CHANGES
 
+ifneq ($(DEBUG_FORCE_STRICT_ALIASING),yes)
+common_CFLAGS += -fno-strict-aliasing
+endif
+
 common_C_INCLUDES += \
 	external/openssl \
 	external/openssl/include \
